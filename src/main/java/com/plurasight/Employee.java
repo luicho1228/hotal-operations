@@ -7,6 +7,7 @@ public class Employee {
     private String department;
     private double payRate;
     private int hoursWorked;
+    private int startTime;
 
     public Employee(){
     }
@@ -27,6 +28,11 @@ public class Employee {
         }
         return overTimeHours;
     }
-
+    public void punchIn(int time){
+        startTime = time;
+    }
+    public void punchOut(int time){
+        hoursWorked = Math.abs(time - startTime);
+    }
 }
 

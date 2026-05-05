@@ -20,7 +20,7 @@ public class Room {
         return price;
     }
 
-    public boolean isOccoupied() {
+    public boolean isOccupied() {
         return isOccupied;
     }
 
@@ -29,6 +29,18 @@ public class Room {
     }
 
     public boolean isAvailable() {
-        return !isDirty && !isOccupied;
+        return !isDirty() && !isOccupied();
+    }
+
+    public void checkIn(){
+        isOccupied = true;
+        isDirty = true;
+    }
+    public void checkOut(){
+        cleanRoom();
+        isOccupied = false;
+    }
+    public void cleanRoom(){
+        isDirty = false;
     }
 }
