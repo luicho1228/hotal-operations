@@ -35,7 +35,7 @@ public class Employee {
         if (time < startTime){
             time += 12;
         }
-        hoursWorked = Math.abs(time - startTime);
+        hoursWorked += Math.abs(time - startTime);
     }
     public int getStartTime(){
         return startTime;

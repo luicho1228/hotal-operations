@@ -17,8 +17,9 @@ class EmployeeTest {
     @Test
     void punchOut() {
         Employee employee = new Employee();
-        employee.punchIn(9);
+        employee.punchIn(3);
         employee.punchOut(6);
-        assertEquals(9,employee.getRegularHours());
+        int expectedResult = 3;
+        assertEquals(expectedResult,employee.getRegularHours());
     }
 }
