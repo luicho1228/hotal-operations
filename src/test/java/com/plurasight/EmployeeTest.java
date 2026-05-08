@@ -9,17 +9,16 @@ class EmployeeTest {
     @Test
     void punchIn() {
         Employee employee = new Employee();
-        Employee employee = new Employee();
-
-        // Act
         employee.punchIn(9);
-        employee.punchOut(17);
+        assertEquals(9,employee.getStartTime());
 
-        // Assert
-        assertEquals(8, employee.getHoursWorked());
     }
 
     @Test
     void punchOut() {
+        Employee employee = new Employee();
+        employee.punchIn(9);
+        employee.punchOut(6);
+        assertEquals(9,employee.getRegularHours());
     }
 }

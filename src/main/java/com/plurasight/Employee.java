@@ -32,7 +32,13 @@ public class Employee {
         startTime = time;
     }
     public void punchOut(int time){
+        if (time < startTime){
+            time += 12;
+        }
         hoursWorked = Math.abs(time - startTime);
+    }
+    public int getStartTime(){
+        return startTime;
     }
 }
 
